@@ -1,0 +1,47 @@
+{% extends 'tweets_searcher/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="jumbotron">
+                      <h2>Busqueda de Tweets</h2>
+                      {%csrf_token%}
+                      <div class="form-group">
+                          <input class="form-control" type="text" id="inputhashtag" name="inputhashtag"
+                          value="{{ inputhashtag }}" placeholder="Buscar tweets..." required>
+                      </div>
+                      <div class="form-group" id="btnbuscartwt">
+                          <button class="save btn btn-info" id="searchWord">Buscar!</button>
+                      </div>
+                    </div> <!-- /Jumbotron -->
+                </div> <!-- /col-md-6 -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="page-header">
+                            <h2>Tweets encontrados:</h2>
+                        </div>
+                        <div class="form-group" id="spinnertwt" align="center"></div>
+                        <div id="posiDiv" class="col-md-6">
+                          <h4>
+                            Positivos: <span class="badge"><label id="labelPositive"></label></span>
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                          </h4>
+                          <div id="ptweet" class="tweet"></div>
+                        </div>
+
+                        <div id="negaDiv" class="col-md-6">
+                          <h4>
+                            Negativos: <span class="badge"><label id="labelNegative"></label></span>
+                            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                          </h4>
+                          <div id="ntweet" class="tweet"></div>
+                        </div>
+                    </div>
+                </div><!-- /col-md-6 -->
+            </div><!-- /row -->
+        </div><!--/.col-xs-12.col-sm-12-->
+    </div><!--/.sidebar-offcanvas-->
+</div><!--/row-->
+{% endblock content %}

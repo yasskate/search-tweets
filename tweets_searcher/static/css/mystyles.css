@@ -1,0 +1,13 @@
+#mapa{
+    width: auto;
+    height: 450px;
+    vertical-align: top;
+}
+
+#btnbuscartwt{
+    text-align: right;
+}
+
+#spinnershowtwt{
+    text-align: center;
+}
